@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Contact.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.8;\r\n\r\ncontract  Contact{\r\n\r\n//state variables\r\naddress public immutable i_owner;\r\n\r\n// mapping(address=>uint256) public s_details;\r\n\r\n//events\r\nevent storeContact(string indexed name , uint256 contactInfo);\r\n\r\n//errors\r\n\r\n\r\nconstructor(){\r\n    i_owner=msg.sender;\r\n}\r\n//function  to store a contract\r\n//params name ,contact details\r\nfunction Store(string memory name, uint256 contactNo) public  {\r\n\r\n    emit storeContact(name,contactNo);\r\n\r\n}\r\n\r\n//function to retreive a contact\r\n//params name \r\n// function getContact(string memory name) public view returns(uint256 )\r\n\r\n\r\n\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
